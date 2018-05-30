@@ -28,7 +28,10 @@ public class bankAccount {
 	JLabel label21;
 	JLabel label3;
 	JLabel label4;
-	JLabel labelAU;
+	JLabel label6;
+	
+	String newline = System.getProperty("line.seperator");
+	
 	
 	JTextField text1;
 	JTextField deAmount;
@@ -42,6 +45,7 @@ public class bankAccount {
 	JButton exitBut;
 	JButton balanceBut;
 	JButton backBut;
+	JButton backBut2;
 	
 	JFrame thisGUI;
 	JPanel panel;
@@ -321,11 +325,24 @@ public class bankAccount {
 		panelAboutUs.setLayout(null);
 		panelAboutUs.setBackground(new Color(86, 222, 190));
 		
-		labelAU = new JLabel();
-		labelAU.setBounds(0,20,30,30);
-		labelAU
+		label6 = new JLabel();
+		//label6.setText("MADE BY: Giulio Ciati but was stolen in the future by Ezel \r\n who used Giulio's time machine to travel back in time to pass Mr.Landfried's class even though he has 6000% in the class, also Qayz helped");
+		label6.setText("MADE BY: EZEL WILSON & QAYZ NURANI")
+		label6.setHorizontalAlignment(JLabel.CENTER);
+		label6.setBounds(0,70,500,300);
+		label6.setVerticalAlignment(JLabel.CENTER);
+		label6.setOpaque(true);
+		label6.setBackground(new Color(86, 222, 190));
+		label6.setFont(new Font(label6.getName(), Font.BOLD, 15));
 		
-		panelAboutUs.add(labelAU);
+		panelAboutUs.add(label6);
+		
+		backBut2 = new JButton();
+		backBut2.setBounds(5, 5, 80, 40);
+		backBut2.setText("Back");
+		backBut2.addActionListener(lForBackButton);
+		panelAboutUs.add(backBut2);
+		
 	}
 
 	
@@ -590,6 +607,3 @@ public class bankAccount {
 	
 	
 }
-
-
-
