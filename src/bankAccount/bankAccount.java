@@ -28,6 +28,7 @@ public class bankAccount {
 	JLabel label21;
 	JLabel label3;
 	JLabel label4;
+	JLabel labelAU;
 	
 	JTextField text1;
 	JTextField deAmount;
@@ -47,6 +48,7 @@ public class bankAccount {
 	JPanel panel2;
 	JPanel panel3;
 	JPanel panel4;
+	JPanel panelAboutUs;
 
 	JOptionPane dialoguePin;
 	JOptionPane dialoguePanel4;
@@ -71,6 +73,9 @@ public class bankAccount {
 		panel4 = new JPanel();
 		panel4.setLayout(null);
 		
+		panelAboutUs = new JPanel();
+		panelAboutUs.setLayout(null);
+		
 		
 //		.___  ___.  _______ .__   __.  __    __  
 //		|   \/   | |   ____||  \ |  | |  |  |  | 
@@ -82,7 +87,7 @@ public class bankAccount {
 		
 		ListenForHomeItem lForHomeItem = new ListenForHomeItem();
 		ListenForlogOutItem lForLogOutItem = new ListenForlogOutItem();
-		ListenForCopyItem lForCopyItem = new ListenForCopyItem();
+		ListenForAboutUsItem lForAboutUsItem = new ListenForAboutUsItem();
 		
 		JMenuBar menuBar = new JMenuBar();
 		
@@ -96,10 +101,10 @@ public class bankAccount {
 		logOutMenuItem.addActionListener(lForLogOutItem);
 		fileMenu.add(logOutMenuItem);
 		
-		JMenu editMenu = new JMenu("Edit");
-		JMenuItem copyMenuItem = new JMenuItem("Copy");
-		copyMenuItem.addActionListener(lForCopyItem);
-		editMenu.add(copyMenuItem);
+		JMenu editMenu = new JMenu("About");
+		JMenuItem AboutUsMenuItem = new JMenuItem("About Us");
+		AboutUsMenuItem.addActionListener(lForAboutUsItem);
+		editMenu.add(AboutUsMenuItem);
 		
 		
 		menuBar.add(fileMenu);
@@ -125,16 +130,16 @@ public class bankAccount {
 		
 		label1 = new JLabel();
 		label1.setText("Welcome");
-		label1.setBounds(0,0,600,30);
-		label1.setOpaque(true);
+		label1.setBounds(0,0,500,30);
+		label1.setOpaque(false);
 		label1.setBackground(Color.pink);
 		label1.setFont(new Font(label1.getName(), Font.PLAIN, 18));
 		label1.setHorizontalAlignment(JLabel.CENTER);
 		
 		label12 = new JLabel();
 		label12.setText("Enter Pin:");
-		label12.setBounds(130,130,90,40);
-		label12.setOpaque(true);
+		label12.setBounds(100,130,90,40);
+		label12.setOpaque(false);
 		
 		label12.setFont(new Font(label12.getName(), Font.PLAIN, 20));
 		
@@ -142,13 +147,13 @@ public class bankAccount {
 		
 		
 		text1 = new JTextField(20);
-		text1.setBounds(220,130, 120, 40);
+		text1.setBounds(195,130, 120, 40);
 		text1.addActionListener(new ListenForPanel1Text());
 		
 		
 		
-		button1  = new JButton("Enter");
-		button1.setBounds(350, 130, 135, 40);
+		button1 = new JButton("Enter");
+		button1.setBounds(320, 130, 135, 40);
 		button1.addActionListener(lForPanel1Button);
 		
 		
@@ -303,7 +308,27 @@ public class bankAccount {
 		thisGUI.add(panel);
 		thisGUI.setVisible(true);
 		
+		
+		
+//		.______      ___      .__   __.  _______  __             
+//		|   _  \    /   \     |  \ |  | |   ____||  |           
+//		|  |_)  |  /  ^  \    |   \|  | |  |__   |  |        ABOUT
+//		|   ___/  /  /_\  \   |  . `  | |   __|  |  |        
+//		|  |     /  _____  \  |  |\   | |  |____ |  `----.    
+//		| _|    /__/     \__\ |__| \__| |_______||_______|      
+		
+		panelAboutUs = new JPanel();
+		panelAboutUs.setLayout(null);
+		panelAboutUs.setBackground(new Color(86, 222, 190));
+		
+		labelAU = new JLabel();
+		labelAU.setBounds(0,20,30,30);
+		labelAU
+		
+		panelAboutUs.add(labelAU);
 	}
+
+	
 	
 	
 	
@@ -357,13 +382,16 @@ public class bankAccount {
 		
 	}
 	
-	private class ListenForCopyItem implements ActionListener{
+	private class ListenForAboutUsItem implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			//JOptionPane.showMessageDialog(thisGUI, text1.getText());
-			System.out.println("Clicked ????");
+			System.out.println("Clicked About Us");
+			thisGUI.setContentPane(panelAboutUs);
+			thisGUI.invalidate();
+			thisGUI.validate();
 		}
 		
 	}
