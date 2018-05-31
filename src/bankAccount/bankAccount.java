@@ -30,9 +30,6 @@ public class bankAccount {
 	JLabel label4;
 	JLabel label6;
 	
-	String newline = System.getProperty("line.seperator");
-	
-	
 	JTextField text1;
 	JTextField deAmount;
 	JTextField withAmount;
@@ -326,22 +323,20 @@ public class bankAccount {
 		panelAboutUs.setBackground(new Color(86, 222, 190));
 		
 		label6 = new JLabel();
-		//label6.setText("MADE BY: Giulio Ciati but was stolen in the future by Ezel \r\n who used Giulio's time machine to travel back in time to pass Mr.Landfried's class even though he has 6000% in the class, also Qayz helped");
-		label6.setText("MADE BY: EZEL WILSON & QAYZ NURANI")
+		label6.setText("<HTML>Press File and then LOGOUT to go back to LOGIN page.<br>MADE BY: EZEL WILSON & QAYZ NURANI<br> Ezel became proficient in Java fairly quickly and was able to help Qayz when it was Qayz's turn for coding. Ezel is a senior in higschool and it his last project! This is Qayz's Sophmore year and he is going into Computer Science A. </HTML>");
 		label6.setHorizontalAlignment(JLabel.CENTER);
-		label6.setBounds(0,70,500,300);
-		label6.setVerticalAlignment(JLabel.CENTER);
+		label6.setBounds(0,50,500,300);
 		label6.setOpaque(true);
 		label6.setBackground(new Color(86, 222, 190));
-		label6.setFont(new Font(label6.getName(), Font.BOLD, 15));
+		label6.setFont(new Font(label6.getName(), Font.BOLD, 24));
 		
 		panelAboutUs.add(label6);
 		
-		backBut2 = new JButton();
-		backBut2.setBounds(5, 5, 80, 40);
-		backBut2.setText("Back");
-		backBut2.addActionListener(lForBackButton);
-		panelAboutUs.add(backBut2);
+		//backBut2 = new JButton();
+		//backBut2.setBounds(5, 5, 80, 40);
+		//backBut2.setText("Back");
+		//backBut2.addActionListener(lForBackButton);
+		//panelAboutUs.add(backBut2);
 		
 	}
 
